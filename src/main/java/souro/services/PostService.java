@@ -34,4 +34,19 @@ public class PostService {
 
         return posts;
     }
+
+    public ArrayList<Post> getOnePost(){
+
+        ArrayList<Post> posts = new ArrayList<>();
+
+        Post post1 = new souro.models.Post();
+        post1.setTitle("First Post");
+        post1.setBody("This is your post");
+        post1.setDate(new Date());
+
+        posts.add(post1);
+        return posts;
+    }
+
+
 }
