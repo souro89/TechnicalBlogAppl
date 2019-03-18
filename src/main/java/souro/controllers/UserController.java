@@ -37,6 +37,7 @@ public class UserController {
         ArrayList<Post> allPosts = postService.getAllPosts();
         model.addAttribute("posts",allPosts);
         return "index";
+
     }
 
 }
