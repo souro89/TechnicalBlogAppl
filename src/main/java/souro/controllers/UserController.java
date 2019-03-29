@@ -9,6 +9,7 @@ import souro.models.Post;
 import souro.services.PostService;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -34,7 +35,7 @@ public class UserController {
     @RequestMapping(value="users/logout",method = RequestMethod.POST)
     public String logout(Model model){
 
-        ArrayList<Post> allPosts = postService.getAllPosts();
+        List<Post> allPosts = postService.getAllPosts();
         model.addAttribute("posts",allPosts);
         return "index";
 

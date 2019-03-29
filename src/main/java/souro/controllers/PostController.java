@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import souro.models.Post;
 import souro.services.PostService;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class PostController {
@@ -18,8 +20,10 @@ public class PostController {
     @RequestMapping("posts")
     public String getUserPosts(Model model){
 
-        ArrayList<Post> onePost = postService.getOnePost();
-        model.addAttribute("posts",onePost);
+        ArrayList<Post> posts = new ArrayList<>();
+        Post latestPost = postService.getLatestPost();
+        posts.add(latestPost);
+        model.addAttribute("posts",posts);
         return "posts";
     }
 }
